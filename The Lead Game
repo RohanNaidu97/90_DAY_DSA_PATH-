@@ -1,0 +1,88 @@
+
+######################################################### MY SOLUTION ##################################################
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	vector<int> vr;
+	vector<int> vs;
+	int w, l = 0; 
+	int size, in1, in2;
+	cin>>size;
+	
+	for(int i = 0; i<size; i++)
+	{
+	    cin>>in1>>in2;
+	    vr.push_back(in1);
+	    vs.push_back(in2);
+	}
+	
+	for(int i = 0; i<size; i++)
+	{
+	    if(vr[i] > vs[i] && vr[i] - vs[i] > l)
+	    {
+	        w = 1;
+	        l = vr[i] - vs[i];
+	    }
+	    
+	    else if(vr[i] < vs[i] && vs[i] - vr[i] > l)
+	    {
+	        w = 2;
+	        l = vs[i] - vr[i];
+	    }
+	}
+	
+	cout<<w<<endl<<l;
+	
+	
+	return 0;
+}
+
+
+######################################################## WHAT I LEARNT ########################################################
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	
+	int size;
+	cin>>size;
+	
+	int s1 = 0, s2 = 0;
+	int w, a1, a2, l = 0, diff = 0;
+	
+	for(int i = 0; i < size; i++)
+	{
+	    cin>>a1>>a2;
+	    s1 += a1;
+	    s2 += a2;
+	    
+	    if(s1 > s2)
+	    {
+	        diff = s1 - s2;
+	        if( diff > l )
+	        {
+	            w = 1;
+	            l = diff;
+	        }
+	    }
+	    
+	    else
+	    {
+	        diff = s2 - s1;
+	        if( diff > l )
+	        {
+	            w = 2;
+	            l = diff;
+	        }
+	    }
+	}
+	
+	cout<<w<<" "<<l;
+	
+	return 0;
+}
