@@ -1,0 +1,51 @@
+
+############################################################# MY SOLUTION #####################################################################
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int test;
+	cin>>test;
+	
+	for(int i = 0; i<test; i++)
+	{
+	    int size,ele, c = 7;
+	    vector<int> ron;
+	    map<int,int> count1;
+	    cin>>size;
+	    
+	    for(int i = 1; i <= 7; i++)
+        count1[i] = 1;
+	    
+	    
+	    for(int k = 0; k < size; k++)
+	    {
+	        cin>>ele;
+	        ron.push_back(ele);
+	    }
+	    
+	    for(int j = 0; j < size; j++)
+	    {
+	        if(count1[ron[j]] == 1)
+	        {
+	            count1[ron[j]] = 0;
+	            c--;
+	        }
+	        
+	        if(c == 0)
+	        {
+	            cout<<j+1<<endl;
+	            break;
+	        }
+	    }
+	}
+	
+	
+	return 0;
+}
+
+############################################################ WHAT I LEARNT ###################################################################
+
+Instead of using map we can use a bool function that is being called every time an element is pused back into the vector.
