@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	
+	int test;
+	cin>>test;
+	
+	for(int t = 0; t < test; t++)
+	{
+	    int size, ele, mnm, count = 0;
+	    //vector<int> sub, jud;
+	    cin>>size;
+	    for(int i = 0; i < size; i++)
+	    {
+	        cin>>ele>>mnm;
+	        if(mnm - ele > 5)
+	            count++;
+	       // sub.push_back(ele);
+	       // jud.push_back(mnm);
+	    }
+	    
+	    cout<<count<<endl;
+	    
+	}
+	return 0;
+}
+
